@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>Command Generator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="container">
-      <div id="buttonContainer"></div>
-      <div id="commandOutput"></div>
-      <button id="clearButton">Clear</button>
-      <button id="copyButton">Copy</button>
-      <div id="historyContainer"></div>
+        <div id="buttonContainer"></div>
+
+        <div id="commandContainer">
+            <textbox id="commandOutput" autofocus></textbox>
+
+            <div id="utilities">
+                <button id="clearButton">Clear</button>
+                <button id="copyButton">Copy</button>
+                <button id="saveButton">Save</button>
+            </div>
+        </div>
+        <div id="historyContainer">
+        </div>
     </div>
     <script src="data.json"></script>
     <script src="commandHelper.js"></script>
-  </body>
+</body>
+
 </html>
