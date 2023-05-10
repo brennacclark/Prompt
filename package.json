@@ -1,5 +1,5 @@
 { 
-   "name": "Prompt", 
+   "name": "prompt", 
    "version": "1.0.0", 
    "description": "prompt generator for AGIs", 
    "scripts": { 
