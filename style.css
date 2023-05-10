@@ -6,6 +6,8 @@
   height: 100vh;
 }
 
+/* BUTTON STYLE */
+
 #buttonContainer {
   display: flex;
   flex-wrap: wrap;
@@ -49,13 +51,30 @@
   color: #fff;
 }
 
+/* COMMAND STYLE */
+
+#commandContainer {
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
 #commandOutput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
   font-family: monospace;
   font-size: 20px;
 }
 
-#clearButton, #copyButton {
+#utilities{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#clearButton, #copyButton, #saveButton {
   border: none;
   background-color: #007bff;
   color: #fff;
@@ -65,15 +84,23 @@
   transition: all 0.2s;
 }
 
-#clearButton:hover, #copyButton:hover {
+#clearButton:hover, #copyButton:hover, #saveButton:hover {
   background-color: #0062cc;
   cursor: pointer;
 }
+
+
+/* HISTORY STYLE */
 
 #historyContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.historyLabel {
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .historyItem {

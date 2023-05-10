@@ -3,7 +3,10 @@ const buttonContainer = document.getElementById("buttonContainer");
 const commandOutput = document.getElementById("commandOutput");
 const clearButton = document.getElementById("clearButton");
 const copyButton = document.getElementById("copyButton");
+const saveButton = document.getElementById("saveButton");
 const historyContainer = document.getElementById("historyContainer");
+
+let displayCommand = ""
 
 // Load data from JSON file
 fetch("data.json")
@@ -32,12 +35,17 @@ fetch("data.json")
     // Add event listener to clear button
     clearButton.addEventListener("click", () => {
       clearSelection();
-      updateCommandOutput();
     });
 
     // Add event listener to copy button
     copyButton.addEventListener("click", () => {
       copyCommandOutput();
+    });
+
+    // Add event listener to save button
+    saveButton.addEventListener("click", () => {
+      saveCommand();
+      clearSelection();
     });
 
     // Generate initial command output
@@ -73,7 +81,7 @@ fetch("data.json")
     }
 
     function generateCommand() {
-      let command = "mycommand";
+      let command = "";
       selectedButtons.forEach(button => {
         command += " " + button.dataset.value;
       });
@@ -83,13 +91,14 @@ fetch("data.json")
     function updateCommandOutput() {
       const command = generateCommand();
       commandOutput.textContent = command;
-      saveCommand(command);
     }
 
     function clearSelection() {
+      commandOutput.textContent = "";
       selectedButtons.forEach(button => {
         button.classList.remove("selected");
       });
+
     }
 
     function copyCommandOutput() {
@@ -103,21 +112,32 @@ fetch("data.json")
       alert("Command copied to clipboard!");
     }
 
-    function saveCommand(command) {
+    function saveCommand() {
+      const command = generateCommand();
       commandHistory.push(command);
       if (commandHistory.length > numHistoryData) {
         commandHistory.shift();
       }
+      clearSelection();
       generateCommandHistory();
     }
 
-    function generateCommandHistory() {
-      historyContainer.innerHTML = "";
-      commandHistory.forEach(command => {
-        const historyItem = document.createElement("div");
-        historyItem.classList.add("historyItem");
-        historyItem.textContent = command;
-        historyContainer.appendChild(historyItem);
-      });
-    }
+function generateCommandHistory() {
+  historyContainer.innerHTML = "";
+  
+  const historyTitle = document.createElement("div");
+  historyTitle.classList.add("historyTitle");
+  historyTitle.textContent = "Chat History";
+  historyContainer.appendChild(historyTitle);
+  
+  commandHistory.forEach(command => {
+    const historyItem = document.createElement("div");
+    historyItem.classList.add("historyItem");
+    historyItem.textContent = command;
+    historyContainer.appendChild(historyItem);
+  });
+}
+  })
+  .catch(error => {
+    console.error("Error loading data:", error);
   });
