@@ -1,0 +1,84 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.buttonGroup:last-of-type {
+  margin-right: 0;
+}
+
+.buttonGroup label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.buttonOption {
+  border: none;
+  background-color: #fff;
+  color: #555;
+  padding: 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.buttonOption:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.buttonOption.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#commandOutput {
+  margin-bottom: 20px;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+#clearButton, #copyButton {
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+#clearButton:hover, #copyButton:hover {
+  background-color: #0062cc;
+  cursor: pointer;
+}
+
+#historyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.historyItem {
+  margin-bottom: 5px;
+  font-family: monospace;
+  font-size: 16px;
+  color: #555;
+}

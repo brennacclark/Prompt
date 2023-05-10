@@ -1,0 +1,21 @@
+{
+  "buttonGroups": [
+    {
+      "groupName": "Option Group 1",
+      "options": [
+        { "name": "Option 1", "value": "--option1" },
+        { "name": "Option 2", "value": "--option2" },
+        { "name": "Option 3", "value": "--option3" }
+      ]
+    },
+    {
+      "groupName": "Option Group 2",
+      "options": [
+        { "name": "Option A", "value": "--optionA" },
+        { "name": "Option B", "value": "--optionB" },
+        { "name": "Option C", "value": "--optionC" }
+      ]
+    }
+  ],
+  "numHistoryData": 10
+}
