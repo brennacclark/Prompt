@@ -6,58 +6,12 @@
   height: 100vh;
 }
 
-/* BUTTON STYLE */
-
-#buttonContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.buttonGroup {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-}
-
-.buttonGroup:last-of-type {
-  margin-right: 0;
-}
-
-.buttonGroup label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.buttonOption {
-  border: none;
-  background-color: #fff;
-  color: #555;
-  padding: 10px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  transition: all 0.2s;
-}
-
-.buttonOption:hover {
-  background-color: #eee;
-  cursor: pointer;
-}
-
-.buttonOption.selected {
-  background-color: #007bff;
-  color: #fff;
-}
-
 /* COMMAND STYLE */
 
 #commandContainer {
   justify-content: center;
   margin-bottom: 20px;
 }
-
 
 #commandOutput {
   display: flex;
@@ -68,13 +22,64 @@
   font-size: 20px;
 }
 
-#utilities{
+/* BUTTON STYLE */
+
+#buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(3, 1fr); /* 3 rows */
+  grid-column-gap: 10px; /* spacing between buttons */
+  gap: 10px; /* spacing between buttons */
+  margin: 20px;
+}
+
+.buttonGroup:last-of-type {
+  margin-right: 0;
+}
+
+.buttonGroup {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.buttonOption {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttonOption:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.buttonOption.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* UTILITY STYLE */
+
+#utilityContainer {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
-#clearButton, #copyButton, #saveButton {
+#clearButton,
+#copyButton,
+#saveButton {
   border: none;
   background-color: #007bff;
   color: #fff;
@@ -84,11 +89,12 @@
   transition: all 0.2s;
 }
 
-#clearButton:hover, #copyButton:hover, #saveButton:hover {
+#clearButton:hover,
+#copyButton:hover,
+#saveButton:hover {
   background-color: #0062cc;
   cursor: pointer;
 }
-
 
 /* HISTORY STYLE */
 
